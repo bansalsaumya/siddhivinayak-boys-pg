@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siddhi Vinayak Boy's PG & Guest House - Your Home Away From Home in Dharuhera, Haryana. Premium, secure, and comfortable rooms for students and working professionals.">
+    <title>Siddhi Vinayak Boy's PG & Guest House - Dharuhera, Haryana</title>
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- --- Header / Navbar --- -->
+    <header id="header">
+        <div class="container nav-wrapper">
+            <div class="logo-container" onclick="scrollToTop()">
+                <img src="images/logo.jpg" alt="Siddhi Vinayak PG Logo" class="logo-img" id="nav-logo">
+                <div class="logo-text">Siddhi <span>Vinayak</span></div>
+            </div>
+            
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#rules">Rules</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+917016316435" class="nav-cta-btn"><i class="fa-solid fa-phone"></i> Call Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- --- Hero Section --- -->
+    <section class="hero-section" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge"><i class="fa-solid fa-location-dot"></i> Dharuhera, Haryana</span>
+                <h1 class="hero-title">Siddhi Vinayak<br><span>Boy's PG & Guest House</span></h1>
+                <p class="badge" style="font-size: 1.1rem; background-color: var(--color-bg-accent); color: var(--color-accent-gold); text-transform: none; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-house-chimney"></i> "Your Home Away From Home"
+                </p>
+                <p class="hero-desc">
+                    The most comfortable, safe, and premium stay for students and working professionals in Dharuhera. Enjoy home-style healthy meals, high-speed internet, and a peaceful environment.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/917016316435" target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> Connect on WhatsApp
+                    </a>
+                    <a href="tel:+917016316435" class="btn btn-secondary">
+                        <i class="fa-solid fa-phone-flip"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image-wrapper">
+                <div class="floating-badge fb-1">
+                    <i class="fa-solid fa-walking" style="color: var(--color-accent-gold);"></i> 2 mins to bus stand
+                </div>
+                <div class="floating-badge fb-2">
+                    <i class="fa-solid fa-indian-rupee-sign" style="color: var(--color-accent-gold);"></i> Starts at ₹5,000
+                </div>
+                <div class="hero-image-card">
+                    <img src="images/building.jpg" alt="Siddhi Vinayak PG Building Front View" id="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- About Us Section --- -->
+    <section class="about-section section-padding" id="about">
+        <div class="container about-content-wrapper">
+            <div class="logo-circle-container">
+                <img src="images/logo.jpg" alt="Siddhi Vinayak Ganesha Logo" style="width: 250px; height: 250px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.1); box-shadow: var(--shadow-hover); cursor: pointer;" id="about-logo">
+            </div>
+            <div class="about-info">
+                <span class="badge">About Our PG</span>
+                <h3>Welcome to Siddhi Vinayak PG</h3>
+                <p class="about-text">
+                    At Siddhi Vinayak, we don't just provide a room—we offer a warm, secure, and career-focused environment. Located in the heart of Dharuhera, our PG ensures a hassle-free living experience for everyone. From delicious daily meals to regular maintenance, we take care of everything so you can focus entirely on your goals.
+                </p>
+                
+                <div class="about-meta-grid">
+                    <div class="meta-box">
+                        <div class="meta-value">100%</div>
+                        <div class="meta-label">Homely Vibe</div>
+                    </div>
+                    <div class="meta-box">
+                        <div class="meta-value">2 Min</div>
+                        <div class="meta-label">To Bus Stand</div>
+                    </div>
+                    <div class="meta-box">
+                        <div class="meta-value">24/7</div>
+                        <div class="meta-label">Security System</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Accommodation Section (Rooms) --- -->
+    <section class="rooms-section section-padding" id="rooms">
+        <div class="container">
+            <div class="center-text">
+                <span class="badge">Our Sharing Options</span>
+                <h2 class="section-title">Room Categories</h2>
+                <p class="section-desc">Select the room type that best fits your requirements and budget. Every room is fully ventilated and furnished.</p>
+            </div>
+            
+            <div class="rooms-grid">
+                <!-- Single Sharing Card -->
+                <div class="room-card">
+                    <div class="room-img-container">
+                        <img src="images/room_cooler_1.jpg" alt="Single Sharing Room Image" class="zoom-img">
+                        <div class="room-tag">Premium Privacy</div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-card-title">Double Sharing Room</h3>
+                        <p class="room-card-desc">Spacious and beautifully managed rooms, ideal for sharing with a friend or colleague.</p>
+                        
+                        <div class="room-features">
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Separate Lockers</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Personal Big Air Cooler</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Spacious Room Layout</div>
+                        </div>
+                        
+                        <div class="room-pricing-meta">
+                            <div class="price-row">
+                                <span class="price-label">Monthly Rent</span>
+                                <span class="price-value">₹6,000 Onwards</span>
+                            </div>
+                            <div class="price-row" style="margin-bottom: 20px; font-size: 0.85rem; color: var(--color-text-muted);">
+                                <span>Deposit: <strong>₹5,000 (Non-Refundable)</strong></span>
+                                <span>Notice: <strong>15 Days</strong></span>
+                            </div>
+                            <button class="room-inquire-btn" onclick="inquireRoom('Double Sharing')">
+                                <i class="fa-brands fa-whatsapp"></i> Book Double Sharing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Double Sharing Card -->
+                <div class="room-card">
+                    <div class="room-img-container">
+                        <img src="images/room_cooler_2.jpg" alt="Double Sharing Room Image" class="zoom-img">
+                        <div class="room-tag">Most Popular</div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-card-title">Triple Sharing Room</h3>
+                        <p class="room-card-desc">A budget-friendly and highly affordable option packed with all necessary essential facilities.</p>
+                        
+                        <div class="room-features">
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Multiple Lockers</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Big Air Cooler Provided</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Highly Cost Effective</div>
+                        </div>
+                        
+                        <div class="room-pricing-meta">
+                            <div class="price-row">
+                                <span class="price-label">Monthly Rent</span>
+                                <span class="price-value">₹5,000 Onwards</span>
+                            </div>
+                            <div class="price-row" style="margin-bottom: 20px; font-size: 0.85rem; color: var(--color-text-muted);">
+                                <span>Deposit: <strong>₹5,000 (Non-Refundable)</strong></span>
+                                <span>Notice: <strong>15 Days</strong></span>
+                            </div>
+                            <button class="room-inquire-btn" onclick="inquireRoom('Triple Sharing')">
+                                <i class="fa-brands fa-whatsapp"></i> Book Triple Sharing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Triple Sharing Card -->
+                <div class="room-card">
+                    <div class="room-img-container">
+                        <img src="images/room_triple_1.jpg" alt="Triple Sharing Room Image" class="zoom-img">
+                        <div class="room-tag">Pocket Friendly</div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-card-title">4 Sharing Room</h3>
+                        <p class="room-card-desc">The most economical choice for students, with shared resources and high affordability.</p>
+                        
+                        <div class="room-features">
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Dedicated Storage</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Big Air Cooler Provided</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Maximum Savings</div>
+                        </div>
+                        
+                        <div class="room-pricing-meta">
+                            <div class="price-row">
+                                <span class="price-label">Monthly Rent</span>
+                                <span class="price-value">₹4,500 Onwards</span>
+                            </div>
+                            <div class="price-row" style="margin-bottom: 20px; font-size: 0.85rem; color: var(--color-text-muted);">
+                                <span>Deposit: <strong>₹5,000 (Non-Refundable)</strong></span>
+                                <span>Notice: <strong>15 Days</strong></span>
+                            </div>
+                            <button class="room-inquire-btn" onclick="inquireRoom('4 Sharing')">
+                                <i class="fa-brands fa-whatsapp"></i> Book 4 Sharing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room Card 4 -->
+                <div class="room-card">
+                    <div class="room-img-container">
+                        <img src="images/room_extra_1.jpg" alt="Comfort Sharing Room Image" class="zoom-img">
+                        <div class="room-tag">Well Ventilated</div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-card-title">Comfort Room</h3>
+                        <p class="room-card-desc">A budget-friendly and highly affordable option packed with all necessary essential facilities.</p>
+                        
+                        <div class="room-features">
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Multiple Lockers</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Big Air Cooler Provided</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Highly Cost Effective</div>
+                        </div>
+                        
+                        <div class="room-pricing-meta">
+                            <div class="price-row">
+                                <span class="price-label">Monthly Rent</span>
+                                <span class="price-value">Pocket Friendly</span>
+                            </div>
+                            <div class="price-row" style="margin-bottom: 20px; font-size: 0.85rem; color: var(--color-text-muted);">
+                                <span>Deposit: <strong>₹5,000 (Non-Refundable)</strong></span>
+                                <span>Notice: <strong>15 Days</strong></span>
+                            </div>
+                            <button class="room-inquire-btn" onclick="inquireRoom('Comfort Room')">
+                                <i class="fa-brands fa-whatsapp"></i> Book Comfort Room
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room Card 5 -->
+                <div class="room-card">
+                    <div class="room-img-container">
+                        <img src="images/room_extra_2.jpg" alt="Classic Sharing Room Image" class="zoom-img">
+                        <div class="room-tag">Bright & Clean</div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-card-title">Classic Room</h3>
+                        <p class="room-card-desc">A budget-friendly and highly affordable option packed with all necessary essential facilities.</p>
+                        
+                        <div class="room-features">
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Multiple Lockers</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Big Air Cooler Provided</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Highly Cost Effective</div>
+                        </div>
+                        
+                        <div class="room-pricing-meta">
+                            <div class="price-row">
+                                <span class="price-label">Monthly Rent</span>
+                                <span class="price-value">Pocket Friendly</span>
+                            </div>
+                            <div class="price-row" style="margin-bottom: 20px; font-size: 0.85rem; color: var(--color-text-muted);">
+                                <span>Deposit: <strong>₹5,000 (Non-Refundable)</strong></span>
+                                <span>Notice: <strong>15 Days</strong></span>
+                            </div>
+                            <button class="room-inquire-btn" onclick="inquireRoom('Classic Room')">
+                                <i class="fa-brands fa-whatsapp"></i> Book Classic Room
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room Card 6 -->
+                <div class="room-card">
+                    <div class="room-img-container">
+                        <img src="images/room_extra_3.jpg" alt="Standard Sharing Room Image" class="zoom-img">
+                        <div class="room-tag">Spacious</div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-card-title">Standard Room</h3>
+                        <p class="room-card-desc">A budget-friendly and highly affordable option packed with all necessary essential facilities.</p>
+                        
+                        <div class="room-features">
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Multiple Lockers</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Big Air Cooler Provided</div>
+                            <div class="room-feature-item"><i class="fa-solid fa-circle-check"></i> Highly Cost Effective</div>
+                        </div>
+                        
+                        <div class="room-pricing-meta">
+                            <div class="price-row">
+                                <span class="price-label">Monthly Rent</span>
+                                <span class="price-value">Pocket Friendly</span>
+                            </div>
+                            <div class="price-row" style="margin-bottom: 20px; font-size: 0.85rem; color: var(--color-text-muted);">
+                                <span>Deposit: <strong>₹5,000 (Non-Refundable)</strong></span>
+                                <span>Notice: <strong>15 Days</strong></span>
+                            </div>
+                            <button class="room-inquire-btn" onclick="inquireRoom('Standard Room')">
+                                <i class="fa-brands fa-whatsapp"></i> Book Standard Room
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Premium Facilities Section --- -->
+    <section class="facilities-section section-padding" id="facilities">
+        <div class="container">
+            <div class="center-text">
+                <span class="badge">Included Services</span>
+                <h2 class="section-title">Premium Facilities</h2>
+                <p class="section-desc">We offer standard, reliable amenities to ensure your stay is comfortable and hassle-free.</p>
+            </div>
+            
+            <div class="facilities-grid">
+                <!-- Facility 1: Food -->
+                <div class="facility-card">
+                    <div class="facility-icon-wrapper">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="facility-name">Healthy Home-Style Meals</h3>
+                    <p class="facility-desc">2 times fresh, nutritious, and delicious meals (Lunch & Dinner) served daily in our clean mess.</p>
+                    <div class="facility-img-preview">
+                        <img src="images/food.jpg" alt="Mess Thali Food Photo" class="zoom-img">
+                    </div>
+                </div>
+                
+                <!-- Facility 2: Wi-Fi -->
+                <div class="facility-card">
+                    <div class="facility-icon-wrapper">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3 class="facility-name">High-Speed Wi-Fi</h3>
+                    <p class="facility-desc">Uninterrupted and blazing-fast internet for smooth work-from-home and online classes.</p>
+                    <div class="facility-img-preview">
+                        <img src="images/wifi_realistic_1781898785277.png" alt="Wi-Fi Router" class="zoom-img">
+                    </div>
+                </div>
+                
+                <!-- Facility 3: Air Cooler -->
+                <div class="facility-card">
+                    <div class="facility-icon-wrapper">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <h3 class="facility-name">Air Coolers</h3>
+                    <p class="facility-desc">Fully ventilated, furnished, and comfortable rooms equipped with Big air coolers to beat the summer heat.</p>
+                    <div class="facility-img-preview">
+                        <img src="images/room_cooler_3.jpg" alt="Tower Cooler Provided in Rooms" class="zoom-img">
+                    </div>
+                </div>
+                
+                <!-- Facility 4: Housekeeping -->
+                <div class="facility-card">
+                    <div class="facility-icon-wrapper">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h3 class="facility-name">Daily Housekeeping</h3>
+                    <p class="facility-desc">Professional daily cleaning to maintain excellent hygiene, sanitation, and neatness.</p>
+                    <div class="facility-img-preview">
+                        <img src="images/housekeeping.jpg" alt="Daily Housekeeping Cleaning" class="zoom-img">
+                    </div>
+                </div>
+                
+                <!-- Facility 5: Security -->
+                <div class="facility-card">
+                    <div class="facility-icon-wrapper">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="facility-name">24/7 Safety & Security</h3>
+                    <p class="facility-desc">Continuous CCTV camera surveillance and strict gate security for complete peace of mind.</p>
+                    <div class="facility-img-preview">
+                        <img src="images/cctv_security_1781898685254.png" alt="CCTV Camera" class="zoom-img">
+                    </div>
+                </div>
+                
+                <!-- Facility 6: Power/Water -->
+                <div class="facility-card">
+                    <div class="facility-icon-wrapper">
+                        <i class="fa-solid fa-plug-circle-bolt"></i>
+                    </div>
+                    <h3 class="facility-name">Power & Water Backup</h3>
+                    <p class="facility-desc">Round-the-clock water supply (RO Drinking Water) and reliable power backup for a hassle-free stay.</p>
+                    <div class="facility-img-preview">
+                        <img src="images/power_water_1781898696758.png" alt="RO Water Purifier" class="zoom-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Open-air Terrace Section --- -->
+    <section class="terrace-section section-padding">
+        <div class="container terrace-grid">
+            <div class="terrace-image-card">
+                <img src="images/terrace.jpg" alt="Open Air Terrace Area for Relaxing" id="terrace-img">
+            </div>
+            
+            <div class="terrace-info">
+                <span class="badge"><i class="fa-solid fa-cloud-sun"></i> Common Areas</span>
+                <h2 class="section-title" style="font-size: 2.2rem; text-align: left; margin-bottom: 24px;">Spacious Rooftop Area</h2>
+                <p class="about-text" style="margin-bottom: 30px;">
+                    Our PG features a large, open-air rooftop terrace area. It serves as the perfect hangout spot for residents to unwind in the evenings, read books, socialize, or catch some fresh air after a long day of studies or work.
+                </p>
+                <div class="room-features" style="margin-bottom: 30px;">
+                    <div class="room-feature-item" style="font-size: 0.95rem;"><i class="fa-solid fa-circle-check"></i> Comfortable Outdoor Chairs</div>
+                    <div class="room-feature-item" style="font-size: 0.95rem;"><i class="fa-solid fa-circle-check"></i> Well-ventilated and open surroundings</div>
+                    <div class="room-feature-item" style="font-size: 0.95rem;"><i class="fa-solid fa-circle-check"></i> Great place to relax in the evening</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- PG Rules & Discipline Section --- -->
+    <section class="rules-section section-padding" id="rules">
+        <div class="container">
+            <div class="center-text">
+                <span class="badge" style="background-color: rgba(255, 255, 255, 0.1); color: var(--color-accent-gold);">Discipline</span>
+                <h2 class="section-title">PG Rules & Policies</h2>
+                <p class="section-desc">To maintain a secure, career-focused, and peaceful environment, we request all residents to adhere to these rules.</p>
+            </div>
+            
+            <div class="rules-card">
+                <ul class="rules-list">
+                    <li class="rule-item">
+                        <div class="rule-num">01</div>
+                        <div class="rule-detail">
+                            <h4>24/7 Easy Access</h4>
+                            <p>We provide full flexibility to our residents. There are no strict entry or exit timings; you can access the PG anytime as per your work or study schedule.</p>
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <div class="rule-num">02</div>
+                        <div class="rule-detail">
+                            <h4>Visitor & Guest Policy</h4>
+                            <p>While outside guests are generally not allowed inside rooms, they can stay for 1 or 2 nights with prior permission from the owner. Standard guest charges will apply.</p>
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <div class="rule-num">03</div>
+                        <div class="rule-detail">
+                            <h4>Kitchen & Food Hygiene</h4>
+                            <p>Respect food and maintain cleanliness. Please do not waste food. If there are leftovers on your plate, dispose of them in the dustbin only—do not throw food waste into the sink.</p>
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <div class="rule-num">04</div>
+                        <div class="rule-detail">
+                            <h4>No Smoking or Substance Abuse</h4>
+                            <p>Siddhi Vinayak PG is a strict zero-tolerance zone for alcohol, smoking, hookah inside rooms, and any illegal substance abuse.</p>
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <div class="rule-num">05</div>
+                        <div class="rule-detail">
+                            <h4>Notice Period (15 Days)</h4>
+                            <p>Residents who wish to leave the PG must provide a clear 15-day notice period. Deposit is non-refundable as per our policy.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Footer & Contact Section --- -->
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Siddhi Vinayak PG Logo" class="logo-img" id="footer-logo-img">
+                    <div class="logo-text" style="font-size: 1.5rem;">Siddhi <span>Vinayak</span></div>
+                </div>
+                <p class="footer-desc">
+                    Providing a safe, comfortable, and managed home environment for boys, students, and working professionals in Dharuhera, Haryana.
+                </p>
+
+                <ul class="contact-details-list">
+                    <li class="contact-detail-item">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <p><strong>PG Owner:</strong> Neeraj Swami</p>
+                    </li>
+                    <li class="contact-detail-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <p><strong>Primary Phone:</strong> <a href="tel:+917016316435" style="font-weight: 600; color: var(--color-accent-gold);">+91 7016316435</a></p>
+                    </li>
+                    <li class="contact-detail-item">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <p><strong>PG Manager (Vikas):</strong> <a href="tel:+919530245604">+91 9530245604</a></p>
+                    </li>
+                    <li class="contact-detail-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p><strong>Email Address:</strong> <a href="mailto:Neerazswami@gmail.com" style="color: var(--color-accent-gold);">Neerazswami@gmail.com</a></p>
+                    </li>
+                    <li class="contact-detail-item">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <p><strong>Address:</strong> near PNB Bank, opp. Hanuman Mandir, Saini Colony, Dharuhera, Haryana 123106</p>
+                    </li>
+                </ul>
+
+                <div class="footer-actions">
+                    <a href="https://www.instagram.com/siddhivinayak_pg?igsh=MzJoZzdkNHRwMXdz" target="_blank" class="btn-social btn-insta">
+                        <i class="fa-brands fa-instagram"></i> Follow on Instagram
+                    </a>
+                    <a href="https://maps.app.goo.gl/d9oLDiBMpuyGzc689?g_st=aw" target="_blank" class="btn-social btn-map">
+                        <i class="fa-solid fa-map-pin"></i> Show Map Location
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-banner-column">
+                <div class="footer-banner-title">Our Physical Banner Info</div>
+                <div class="footer-banner-card">
+                    <img src="images/banner.jpg" alt="Siddhi Vinayak PG Gate Banner" id="footer-banner-img">
+                </div>
+            </div>
+        </div>
+        
+        <div class="container copyright-row">
+            <div class="copyright-text">
+                &copy; 2026 Siddhi Vinayak Boy's PG & Guest House. All Rights Reserved.
+            </div>
+            <div class="design-by">
+                Premium Design by <span>Saumya Bansal</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- Floating Actions --- -->
+    <div class="floating-back-to-top" id="scroll-to-top" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- --- Lightbox Modal (Zoom Effect) --- -->
+    <div class="lightbox-modal" id="lightbox">
+        <div class="lightbox-content-wrapper">
+            <button class="lightbox-close-btn" id="lightbox-close">&times;</button>
+            <img src="" alt="Zoomed view" class="lightbox-img" id="lightbox-image">
+            <div class="lightbox-caption" id="lightbox-title">Image Zoom View</div>
+        </div>
+    </div>
+
+    <!-- --- Floating Chatbot --- -->
+    <div class="chatbot-wrapper" id="chatbot">
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chef-icon-circle">👨‍🍳</div>
+                    <div>
+                        <h4>Kitchen Maharaj</h4>
+                        <span class="status-dot"></span> <small>Online</small>
+                    </div>
+                </div>
+                <button class="close-chat" id="close-chat">&times;</button>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="msg bot">
+                    Namaste! 🙏 Main yahan ka Maharaj hoon. Khane ya PG ke baare mein kuch puchna hai?
+                </div>
+            </div>
+            <div class="chat-footer" id="chat-footer">
+                <div class="chat-options-box">
+                    <button class="chat-opt" onclick="botResponse('price')">Rent?</button>
+                    <button class="chat-opt" onclick="botResponse('food')">Khana?</button>
+                    <button class="chat-opt" onclick="botResponse('rules')">Rules?</button>
+                    <button class="chat-opt" onclick="botResponse('location')">Location?</button>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="user-input" placeholder="Type your question..." onkeypress="handleEnter(event)">
+                    <button onclick="handleUserInput()"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="chat-toggle" id="chat-toggle">
+            <div class="toggle-chef">👨‍🍳</div>
+            <span class="chat-badge">1</span>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
