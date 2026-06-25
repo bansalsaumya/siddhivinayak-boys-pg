@@ -10,9 +10,9 @@
 /* --- Custom Properties (Design System) --- */
 :root {
     /* Color Palette */
-    --color-bg-main: #FCF9F5;      /* Warm Off-White */
+    --color-bg-main: #F2EBE4;      /* Slightly Darker Warm Beige */
     --color-bg-card: #FFFFFF;      /* Clean White */
-    --color-bg-accent: #F5ECE3;    /* Soft Peach Beige */
+    --color-bg-accent: #E8DCD0;    /* Darker Accent Beige */
     --color-text-dark: #2A201A;    /* Deep Coffee Brown */
     --color-text-muted: #5D5048;  /* Muted Charcoal Brown */
     --color-accent-gold: #C59B6D;  /* Rich Bronze Gold */
@@ -33,6 +33,89 @@
     --shadow-premium: 0 10px 30px rgba(42, 32, 26, 0.05);
     --shadow-hover: 0 20px 40px rgba(42, 32, 26, 0.12);
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --color-dark-brown: #3E2F28;   /* Bold Dark Brown for borders */
+}
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+    background-color: #FFFFFF; /* Section background made white */
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--color-bg-card);
+    padding: 40px 30px;
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--color-dark-brown);
+    box-shadow: var(--shadow-premium);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.quote-icon {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: var(--color-bg-accent);
+    opacity: 0.5;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-bottom: 24px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.author-info h4 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+    color: var(--color-text-dark);
+}
+
+.author-info p {
+    font-size: 0.85rem;
+    color: var(--color-accent-gold);
+    font-weight: 600;
+}
+
+.rating {
+    color: #FFD700;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
 }
 
 /* --- Reset & Base --- */
@@ -263,6 +346,7 @@ header.scrolled {
     padding-bottom: 100px;
     position: relative;
     overflow: hidden;
+    background-color: #FFFFFF; /* Section background made white */
 }
 
 .hero-grid {
@@ -500,7 +584,7 @@ header.scrolled {
     transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(42, 32, 26, 0.03);
+    border: 2px solid var(--color-dark-brown);
 }
 
 .room-card:hover {
@@ -639,7 +723,7 @@ header.scrolled {
     box-shadow: var(--shadow-premium);
     text-align: center;
     transition: var(--transition-smooth);
-    border: 1px solid rgba(197, 155, 109, 0.1);
+    border: 2px solid var(--color-dark-brown);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1200,16 +1284,6 @@ footer {
     border: 2px solid var(--color-accent-gold);
 }
 
-.toggle-chef {
-    font-size: 3rem;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
 .chat-header h4 {
     font-size: 0.95rem;
     margin: 0;
@@ -1281,6 +1355,23 @@ footer {
     gap: 5px;
 }
 
+.chat-opt {
+    background-color: #F0E6DB;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chat-opt:hover {
+    background-color: var(--color-accent-gold);
+    color: #FFFFFF;
+}
+
 .chat-input-area {
     display: flex;
     gap: 8px;
@@ -1316,21 +1407,14 @@ footer {
     background-color: var(--color-text-dark);
 }
 
-.chat-opt {
-    background-color: #F0E6DB;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--color-text-dark);
-    cursor: pointer;
-    transition: 0.2s;
+.toggle-chef {
+    font-size: 3rem;
+    animation: bounce 2s infinite;
 }
 
-.chat-opt:hover {
-    background-color: var(--color-accent-gold);
-    color: #FFFFFF;
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 /* --- Lightbox Modal (Zoom Effect) --- */

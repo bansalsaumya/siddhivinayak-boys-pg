@@ -7,15 +7,23 @@
 const pgKnowledge = {
     price: "Hamaare yahan Double Sharing ₹6,000, Triple ₹5,000 aur 4 Sharing ₹4,500 se shuru hai. Deposit ₹5,000 (Non-Refundable) hai.",
     rent: "Hamaare yahan Double Sharing ₹6,000, Triple ₹5,000 aur 4 Sharing ₹4,500 se shuru hai. Deposit ₹5,000 (Non-Refundable) hai.",
-    food: "Maharaj taaza Lunch aur Dinner dete hain. Ghar jaisa swadisht khana Dal, Sabzi, Roti rehta hai.",
-    location: "Hum Sohna Road par PNB Bank ke paas hain, opp. Hanuman Mandir. Bus Stand se sirf 2 min door!",
-    owner: "Siddhi Vinayak PG ke owner Neeraj Swami ji hain (7016316435).",
-    manager: "Hamaare PG manager Vikas ji hain. Aap unhe 9530245604 par sampark kar sakte hain.",
+    food: "Hamaare yahan Maharaj roz taaza khana banate hain. Week mein ek din kuch naya (Special) banta hai aur ek din Kheer ya Sweet compulsory hoti hai. Baaki din alag-alag sabji-roti, aur kuch din sabji-roti ke saath dal-chawal bhi milta hai. 😋",
+    location: "Hum Sohna Road par PNB Bank ke paas hain, opp. Hanuman Mandir. Bus Stand se sirf 2 min door! Map location ke liye neeche button par click karein.",
+    owner: "Siddhi Vinayak PG ke owner Neeraj Swami ji hain. Unka number 7016316435 hai.",
+    manager: "Hamaare PG manager Vikas ji hain. Aap unhe 9530245604 par call ya WhatsApp kar sakte hain.",
     rules: "Humere yahan entry/exit ki koi strict timing nahi hai, aap kabhi bhi aa-ja sakte hain. Khana waste na karein aur bacha hua khana dustbin mein hi dalein. Visitors ke liye guest charges apply hote hain.",
-    wifi: "Haan ji, high-speed Wi-Fi ki suvidha har resident ke liye free hai.",
-    cooler: "Garmi ke liye har room mein Big Air Coolers lagaye gaye hain.",
-    security: "24/7 CCTV surveillance aur guard security available hai.",
-    notice: "PG chhodne ke liye 15-day ka notice period dena zaroori hai."
+    wifi: "Haan ji, high-speed Wi-Fi ki suvidha har resident ke liye bilkul free hai.",
+    cooler: "Garmi ki chinta mat kijiye, har room mein 'Big Air Coolers' lagaye gaye hain taaki aap aram se reh sakein.",
+    security: "Poora PG CCTV surveillance mein hai aur safety ka poora dhyan rakha jata hai.",
+    notice: "Agar aap PG chhodna chahte hain, toh 15-day ka notice dena zaroori hai. Deposit non-refundable hai.",
+    capacity: "Humare yahan total 23 beds hain. Saath hi ye ek Guest House bhi hai, jahan per night ka charge alag se hota hai.",
+    parking: "Haan ji, bike parking ke liye safe aur paryapt (enough) jagah available hai.",
+    water: "Pene ke liye 24 ghante thanda aur saaf RO water available hai.",
+    laundry: "Washing machine ki suvidha hai aur terrace par kapde sukhane ki achhi jagah hai.",
+    cleaning: "Safai (Housekeeping) rozana hoti hai. Hum hygiene ka poora dhyan rakhte hain.",
+    gender: "Siddhi Vinayak sirf Boys (Ladkon) ke liye PG aur Guest House hai.",
+    docs: "Rehne ke liye aapko apna Aadhar Card ki photo aur ek passport size photo deni hogi.",
+    general: "Siddhi Vinayak PG Sohna Road (Dharuhera) mein ek premium Boys PG hai. Yahan aapko thanda RO pani, Wi-Fi, coolers, rozana safai, aur Maharaj ke hath ka swadishth khana milta hai. Aap rent, location ya food ke baare mein puchiye, main sab bata dunga! 😊"
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopBtn = document.getElementById('scroll-to-top');
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section, footer');
+
+    const navLinks = [
+        { name: 'Home', href: '#home', id: 'home' },
+        { name: 'About', href: '#about', id: 'about' },
+        { name: 'Rooms', href: '#rooms', id: 'rooms' },
+        { name: 'Facilities', href: '#facilities', id: 'facilities' },
+        { name: 'Reviews', href: '#reviews', id: 'reviews' },
+        { name: 'Rules', href: '#rules', id: 'rules' },
+        { name: 'Contact', href: '#contact', id: 'contact' },
+    ];
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) header.classList.add('scrolled');
@@ -117,18 +135,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// --- Chatbot Functions ---
+// --- Smart Chatbot Logic ---
 function botResponse(type) {
-    if (pgKnowledge[type]) {
-        addChatMessage(pgKnowledge[type], 'bot');
-    } else {
-        addChatMessage("Ji, is baare mein main check karke batata hoon. Aap Owner ko call kar sakte hain.", 'bot');
-    }
+    if (pgKnowledge[type]) addChatMessage(pgKnowledge[type], 'bot');
+    else addChatMessage("Namaste! Bataiye main aapki kya madad kar sakta hoon?", 'bot');
 }
 
-function handleEnter(e) {
-    if (e.key === 'Enter') handleUserInput();
-}
+function handleEnter(e) { if (e.key === 'Enter') handleUserInput(); }
 
 function handleUserInput() {
     const input = document.getElementById('user-input');
@@ -140,29 +153,44 @@ function handleUserInput() {
 
     let botMsg = "";
 
-    // Keyword matching logic
-    if (text.includes("rent") || text.includes("price") || text.includes("pais") || text.includes("kitna") || text.includes("kiraya")) {
+    if (text.includes("rent") || text.includes("price") || text.includes("pais") || text.includes("kitna") || text.includes("kiraya") || text.includes("kharch")) {
         botMsg = pgKnowledge.rent;
-    } else if (text.includes("khana") || text.includes("food") || text.includes("dinner") || text.includes("lunch") || text.includes("meal")) {
+    } else if (text.includes("khana") || text.includes("food") || text.includes("menu") || text.includes("special") || text.includes("nashta") || text.includes("maharaj")) {
         botMsg = pgKnowledge.food;
-    } else if (text.includes("owner") || text.includes("malik") || text.includes("neeraj")) {
+    } else if (text.includes("owner") || text.includes("malik") || text.includes("neeraj") || text.includes("number")) {
         botMsg = pgKnowledge.owner;
     } else if (text.includes("manager") || text.includes("vikas")) {
         botMsg = pgKnowledge.manager;
-    } else if (text.includes("pata") || text.includes("addres") || text.includes("location") || text.includes("kahan") || text.includes("rasta") || text.includes("map")) {
+    } else if (text.includes("pata") || text.includes("addres") || text.includes("location") || text.includes("rasta") || text.includes("map") || text.includes("kaha h")) {
         botMsg = pgKnowledge.location;
-    } else if (text.includes("rules") || text.includes("niyam") || text.includes("timing") || text.includes("gate")) {
+    } else if (text.includes("rules") || text.includes("niyam") || text.includes("timing") || text.includes("gate") || text.includes("policy")) {
         botMsg = pgKnowledge.rules;
-    } else if (text.includes("wifi") || text.includes("net") || text.includes("internet")) {
+    } else if (text.includes("wifi") || text.includes("internet") || text.includes("net") || text.includes("wi-fi")) {
         botMsg = pgKnowledge.wifi;
-    } else if (text.includes("cooler") || text.includes("ac") || text.includes("garmi")) {
+    } else if (text.includes("cooler") || text.includes("ac") || text.includes("garmi") || text.includes("hawa")) {
         botMsg = pgKnowledge.cooler;
-    } else if (text.includes("security") || text.includes("safe") || text.includes("cctv")) {
-        botMsg = pgKnowledge.security;
+    } else if (text.includes("parking") || text.includes("bike") || text.includes("gadi") || text.includes("cycle")) {
+        botMsg = pgKnowledge.parking;
+    } else if (text.includes("ro") || text.includes("water") || text.includes("paani") || text.includes("thanda") || text.includes("drinking")) {
+        botMsg = pgKnowledge.water;
+    } else if (text.includes("kapde") || text.includes("washing") || text.includes("laundry") || text.includes("dhone") || text.includes("dhobi")) {
+        botMsg = pgKnowledge.laundry;
+    } else if (text.includes("safai") || text.includes("cleaning") || text.includes("clean") || text.includes("housekeeping")) {
+        botMsg = pgKnowledge.cleaning;
+    } else if (text.includes("ladke") || text.includes("boys") || text.includes("girls") || text.includes("gender") || text.includes("ladies")) {
+        botMsg = pgKnowledge.gender;
+    } else if (text.includes("aadhar") || text.includes("id proof") || text.includes("documents") || text.includes("kagaz") || text.includes("photo")) {
+        botMsg = pgKnowledge.docs;
+    } else if (text.includes("beds") || text.includes("total") || text.includes("log") || text.includes("capacity") || text.includes("jagah")) {
+        botMsg = pgKnowledge.capacity;
+    } else if (text.includes("thank") || text.includes("shukriya") || text.includes("dhanyawad") || text.includes("ok") || text.includes("accha")) {
+        botMsg = "Aapka swagat hai! 😊 Agar kuch aur puchna ho toh zaroor batayein.";
+    } else if (text.includes("pg") || text.includes("batao") || text.includes("info") || text.includes("detail") || text.includes("about")) {
+        botMsg = pgKnowledge.general;
     } else if (text.includes("hi") || text.includes("hello") || text.includes("namaste") || text.includes("hey")) {
-        botMsg = "Namaste! 🙏 Main Kitchen Maharaj hoon. Rent, Khana, ya Location ke baare mein kuch bhi puchiye!";
+        botMsg = "Namaste! 🙏 Main Kitchen Maharaj hoon. Rent, Khana, ya PG ki suvidhaon ke baare mein kuch bhi puchiye!";
     } else {
-        botMsg = "Maafi chahta hoon, ye baat samajh nahi aayi. Aap Rent, Khana, ya Rules ke baare mein puch sakte hain.";
+        botMsg = "Maafi chahta hoon, ye samajh nahi aaya. Aap Rent, Khana, Parking ya WiFi ke baare mein puch sakte hain. Detail mein baat karne ke liye Owner (7016316435) ko call karein.";
     }
 
     setTimeout(() => addChatMessage(botMsg, 'bot'), 600);
@@ -173,9 +201,28 @@ function addChatMessage(msg, sender) {
     if (!chatBody) return;
     const msgDiv = document.createElement('div');
     msgDiv.className = `msg ${sender}`;
-    msgDiv.innerHTML = msg;
     chatBody.appendChild(msgDiv);
-    chatBody.scrollTop = chatBody.scrollHeight;
+
+    if (sender === 'bot') {
+        let i = 0;
+        msgDiv.innerHTML = "";
+        const speed = 25;
+        function type() {
+            if (i < msg.length) {
+                if (msg.charAt(i) === '<') {
+                    let tag = "";
+                    while (msg.charAt(i) !== '>') { tag += msg.charAt(i); i++; }
+                    tag += '>'; msgDiv.innerHTML += tag; i++;
+                } else { msgDiv.innerHTML += msg.charAt(i); i++; }
+                chatBody.scrollTop = chatBody.scrollHeight;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    } else {
+        msgDiv.innerHTML = msg;
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
 }
 
 function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
