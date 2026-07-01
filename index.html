@@ -45,7 +45,7 @@
             <div class="hero-content">
                 <span class="badge"><i class="fa-solid fa-location-dot"></i> Dharuhera, Haryana</span>
                 <h1 class="hero-title">SiddhiVinayak<br><span>Boy's PG & Guest House</span></h1>
-                <p class="badge" style="font-size: 1.1rem; background-color: var(--color-bg-accent); color: var(--color-accent-gold); text-transform: none; display: inline-flex; align-items: center; gap: 8px;">
+                <p class="badge" style="font-size: 1.1rem; background-color: var(--color-bg-accent); color: #5D4037; text-transform: none; display: inline-flex; align-items: center; gap: 8px;">
                     <i class="fa-solid fa-house-chimney"></i> "Your Home Away From Home"
                 </p>
                 <p class="hero-desc">
@@ -68,8 +68,15 @@
                 <div class="floating-badge fb-2">
                     <i class="fa-solid fa-indian-rupee-sign" style="color: var(--color-accent-gold);"></i> Starts at ₹5,000
                 </div>
-                <div class="hero-image-card">
-                    <img src="images/building.jpg" alt="SiddhiVinayak PG Building Front View" id="hero-img">
+                <div class="hero-image-card" id="hero-card">
+                    <img src="images/building.jpg" alt="SiddhiVinayak PG Building" id="hero-img">
+                    <video id="hero-video" preload="auto" loop playsinline poster="images/building.jpg">
+                        <source src="building_video.mp4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="play-btn-overlay" id="play-video-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
                 </div>
             </div>
         </div>

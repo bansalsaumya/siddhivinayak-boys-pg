@@ -15,8 +15,8 @@
     --color-bg-accent: #E8DCD0;    /* Darker Accent Beige */
     --color-text-dark: #2A201A;    /* Deep Coffee Brown */
     --color-text-muted: #5D5048;  /* Muted Charcoal Brown */
-    --color-accent-gold: #C59B6D;  /* Rich Bronze Gold */
-    --color-accent-hover: #A77E53; /* Darker Bronze Gold */
+    --color-accent-gold: #5D4037;  /* Dark Brown */
+    --color-accent-hover: #452F29; /* Even Darker Brown */
     --color-whatsapp: #25D366;     /* WhatsApp Green */
     --color-whatsapp-hover: #20BA5A;
     --color-call: #2A201A;         /* Dark Call Button */
@@ -30,8 +30,8 @@
     --border-radius-sm: 8px;
 
     /* Shadows & Transitions */
-    --shadow-premium: 0 10px 30px rgba(42, 32, 26, 0.05);
-    --shadow-hover: 0 20px 40px rgba(42, 32, 26, 0.12);
+    --shadow-premium: 0 12px 35px rgba(42, 32, 26, 0.1);
+    --shadow-hover: 0 25px 50px rgba(42, 32, 26, 0.18);
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --color-dark-brown: #3E2F28;   /* Bold Dark Brown for borders */
 }
@@ -51,7 +51,7 @@
     background-color: var(--color-bg-card);
     padding: 40px 30px;
     border-radius: var(--border-radius-lg);
-    border: 2px solid var(--color-dark-brown);
+    border: 3.5px solid var(--color-dark-brown);
     box-shadow: var(--shadow-premium);
     transition: var(--transition-smooth);
     position: relative;
@@ -172,8 +172,8 @@ a {
     display: inline-block;
     padding: 6px 16px;
     background-color: var(--color-bg-accent);
-    color: var(--color-accent-gold);
-    font-weight: 600;
+    color: #5D4037; /* Dark Brown */
+    font-weight: 700;
     font-size: 0.85rem;
     border-radius: 50px;
     margin-bottom: 16px;
@@ -371,7 +371,7 @@ header.scrolled {
 }
 
 .hero-title span {
-    color: var(--color-accent-gold);
+    color: #5D4037; /* Clear Dark Brown */
 }
 
 .hero-desc {
@@ -438,21 +438,80 @@ header.scrolled {
     border-radius: 24px;
     overflow: hidden;
     box-shadow: var(--shadow-premium);
-    transition: var(--transition-smooth);
     border: 8px solid var(--color-bg-card);
-    transform: rotate(0deg);
-}
-
-.hero-image-card:hover {
-    transform: rotate(0deg) scale(1.02);
-    box-shadow: var(--shadow-hover);
-}
-
-.hero-image-card img {
+    background-color: #000;
     width: 100%;
-    max-height: 560px;
+    height: 450px; /* Fixed height to ensure it doesn't disappear */
+}
+
+.hero-image-card img,
+.hero-image-card video {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
+}
+
+#hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+}
+
+.hero-image-card.video-playing #hero-video {
+    display: block;
+}
+
+.hero-image-card.video-playing img,
+.hero-image-card.video-playing .play-btn-overlay {
+    display: none;
+}
+
+/* Play Button Overlay */
+
+.hero-image-card.video-playing .play-btn-overlay {
+    display: none;
+}
+
+/* Play Button Overlay */
+.play-btn-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-accent-gold);
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 20;
+    box-shadow: 0 0 0 0 rgba(197, 155, 109, 0.4);
+    transition: var(--transition-smooth);
+    animation: pulse-play 2s infinite;
+    cursor: pointer;
+    border: none;
+}
+
+.play-btn-overlay i {
+    margin-left: 4px; /* Centering the play icon better */
+}
+
+.play-btn-overlay:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: var(--color-text-dark);
+    color: #FFFFFF;
+}
+
+@keyframes pulse-play {
+    0% { box-shadow: 0 0 0 0 rgba(197, 155, 109, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(197, 155, 109, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(197, 155, 109, 0); }
 }
 
 /* Floating Badges */
@@ -584,7 +643,7 @@ header.scrolled {
     transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--color-dark-brown);
+    border: 3.5px solid var(--color-dark-brown);
 }
 
 .room-card:hover {
@@ -723,7 +782,7 @@ header.scrolled {
     box-shadow: var(--shadow-premium);
     text-align: center;
     transition: var(--transition-smooth);
-    border: 2px solid var(--color-dark-brown);
+    border: 3.5px solid var(--color-dark-brown);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -943,7 +1002,7 @@ header.scrolled {
 
 /* --- Footer & Contact Section --- */
 footer {
-    background-color: var(--color-bg-main);
+    background-color: #FFFFFF; /* Pure White background for Footer only */
     border-top: 1px solid rgba(42, 32, 26, 0.05);
     padding-top: 100px;
     padding-bottom: 40px;
@@ -1094,6 +1153,7 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     opacity: 0.8;
     transition: var(--transition-smooth);
+    pointer-events: none; /* Allows click to pass to the image */
 }
 
 .footer-banner-card:hover::before {
@@ -1118,6 +1178,7 @@ footer {
     opacity: 0;
     transition: var(--transition-smooth);
     backdrop-filter: blur(2px);
+    pointer-events: none; /* Allows click to pass through to the image */
 }
 
 .footer-banner-card:hover img {

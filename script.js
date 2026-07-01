@@ -35,16 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section, footer');
 
-    const navLinks = [
-        { name: 'Home', href: '#home', id: 'home' },
-        { name: 'About', href: '#about', id: 'about' },
-        { name: 'Rooms', href: '#rooms', id: 'rooms' },
-        { name: 'Facilities', href: '#facilities', id: 'facilities' },
-        { name: 'Reviews', href: '#reviews', id: 'reviews' },
-        { name: 'Rules', href: '#rules', id: 'rules' },
-        { name: 'Contact', href: '#contact', id: 'contact' },
-    ];
-
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
@@ -91,6 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxTitle = document.getElementById('lightbox-title');
     const lightboxClose = document.getElementById('lightbox-close');
 
+    function openLightbox(src, caption) {
+        if (lightbox && lightboxImage && lightboxTitle) {
+            lightboxImage.src = src;
+            lightboxTitle.innerText = caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
     const zoomableImages = [
         { element: document.getElementById('nav-logo'), caption: 'Siddhi Vinayak PG - Official Logo' },
         { element: document.getElementById('about-logo'), caption: 'Siddhi Vinayak PG - Ganesha Logo' },
@@ -106,13 +105,39 @@ document.addEventListener('DOMContentLoaded', () => {
     zoomableImages.forEach(item => {
         if (item.element) {
             item.element.addEventListener('click', () => {
-                lightboxImage.src = item.element.src;
-                lightboxTitle.innerText = item.caption;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                openLightbox(item.element.src, item.caption);
             });
         }
     });
+
+    // Special fix for Banner Card container click
+    const bannerCard = document.querySelector('.footer-banner-card');
+    if (bannerCard) {
+        bannerCard.addEventListener('click', () => {
+            const img = document.getElementById('footer-banner-img');
+            if (img) openLightbox(img.src, 'Siddhi Vinayak PG - Banner');
+        });
+    }
+
+    // --- Video In-Place Logic ---
+    const heroCard = document.getElementById('hero-card');
+    const playBtn = document.getElementById('play-video-btn');
+    const heroVideo = document.getElementById('hero-video');
+
+    if (playBtn && heroCard && heroVideo) {
+        playBtn.addEventListener('click', () => {
+            heroCard.classList.add('video-playing');
+            heroVideo.play().catch(err => {
+                console.error("Video error:", err);
+            });
+        });
+
+        // Optional: Click video to pause/play again
+        heroVideo.addEventListener('click', () => {
+            if (heroVideo.paused) heroVideo.play();
+            else heroVideo.pause();
+        });
+    }
 
     if (lightboxClose) {
         const closeModal = () => { lightbox.classList.remove('active'); document.body.style.overflow = 'auto'; };
@@ -190,7 +215,7 @@ function handleUserInput() {
     } else if (text.includes("hi") || text.includes("hello") || text.includes("namaste") || text.includes("hey")) {
         botMsg = "Namaste! 🙏 Main Kitchen Maharaj hoon. Rent, Khana, ya PG ki suvidhaon ke baare mein kuch bhi puchiye!";
     } else {
-        botMsg = "Maafi chahta hoon, ye samajh nahi aaya. Aap Rent, Khana, Parking ya WiFi ke baare mein puch sakte hain. Detail mein baat karne ke liye Owner (7016316435) ko call karein.";
+        botMsg = "Maafi chahta hoon, ye baat samajh nahi aayi. Aap Rent, Khana, Parking ya WiFi ke baare mein puch sakte hain. Detail mein baat karne ke liye Owner (7016316435) ko call karein.";
     }
 
     setTimeout(() => addChatMessage(botMsg, 'bot'), 600);
