@@ -5,8 +5,8 @@
 
 // --- Smart Chatbot Knowledge Base ---
 const pgKnowledge = {
-    price: "Hamaare yahan Double Sharing ₹6,000, Triple ₹5,000 aur 4 Sharing ₹4,500 se shuru hai. Deposit ₹5,000 (Non-Refundable) hai.",
-    rent: "Hamaare yahan Double Sharing ₹6,000, Triple ₹5,000 aur 4 Sharing ₹4,500 se shuru hai. Deposit ₹5,000 (Non-Refundable) hai.",
+    price: "Hamaare yahan Double Sharing ₹7,000, Triple ₹5,000 aur 4 Sharing ₹4,500 se shuru hai. Deposit ₹5,000 (Non-Refundable) hai.",
+    rent: "Hamaare yahan Double Sharing ₹7,000, Triple ₹5,000 aur 4 Sharing ₹4,500 se shuru hai. Deposit ₹5,000 (Non-Refundable) hai.",
     food: "Hamaare yahan Maharaj roz taaza khana banate hain. Week mein ek din kuch naya (Special) banta hai aur ek din Kheer ya Sweet compulsory hoti hai. Baaki din alag-alag sabji-roti, aur kuch din sabji-roti ke saath dal-chawal bhi milta hai. 😋",
     location: "Hum Sohna Road par PNB Bank ke paas hain, opp. Hanuman Mandir. Bus Stand se sirf 2 min door! Map location ke liye neeche button par click karein.",
     owner: "Siddhi Vinayak PG ke owner Neeraj Swami ji hain. Unka number 7016316435 hai.",
