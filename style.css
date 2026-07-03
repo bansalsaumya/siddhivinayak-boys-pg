@@ -419,6 +419,7 @@ header.scrolled {
     grid-template-columns: 1.1fr 0.9fr;
     gap: 60px;
     align-items: center;
+    width: 100%;
 }
 
 .hero-content {
@@ -508,7 +509,14 @@ header.scrolled {
     border: 8px solid var(--color-bg-card);
     background-color: #000;
     width: 100%;
-    height: 450px; /* Fixed height to ensure it doesn't disappear */
+    height: 450px; /* Fixed height for desktop */
+}
+
+@media (max-width: 768px) {
+    .hero-image-card {
+        height: 300px; /* Smaller height for mobile */
+        border-width: 4px;
+    }
 }
 
 .hero-image-card img,
@@ -1711,10 +1719,23 @@ footer {
 /* --- Responsive Adaptations (Media Queries) --- */
 
 @media (max-width: 1024px) {
+    .hero-section {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
+    }
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
     }
 
     .hero-buttons {
@@ -1722,8 +1743,10 @@ footer {
     }
 
     .hero-image-wrapper {
-        margin-top: 40px;
+        margin-top: 20px;
+        width: 100%;
     }
+}
 
     .about-content-wrapper {
         grid-template-columns: 1fr;
@@ -1813,11 +1836,19 @@ footer {
         font-size: 2.2rem;
     }
 
+    .hero-desc {
+        font-size: 1rem;
+    }
+
     .btn {
         width: 100%;
     }
 
     .floating-badge {
-        display: none; /* Hide floating badges on very small phones to avoid overlap */
+        display: none; /* Hide floating badges on very small phones */
+    }
+
+    .hero-image-card {
+        height: 250px;
     }
 }
